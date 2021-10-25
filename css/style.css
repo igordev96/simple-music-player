@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    background-image: url(../assets/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #111;
+    height: 600px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0px 0px 10px 2px rgb(33, 4, 71);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    /* background-image: url(../assets/songs/mobrici.jpg); */
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    animation: disc 12s infinite linear;
+}
+
+.song{
+    position: absolute;
+    top: 40%;
+    color: rgb(76, 14, 158);
+    text-align: center;
+}
+
+.controls{
+    position: absolute;
+    bottom: 10%;
+}
+
+.btn{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+
+.previous{
+    transform: scaleX(-1);
+    margin-right: 30px;
+}
+
+.play{
+    margin-right: 30px;
+}
+
+footer{
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+footer em{
+    color: rgb(146, 74, 240);
+}
+
+a{
+    text-decoration: none;
+}
+
+@keyframes disc {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
