@@ -69,7 +69,6 @@ function playPause(){
         play.setAttribute("src","./assets/play.png");
         img.style.animationPlayState = "paused"
     }
-    // setTimeout(() => slider.setAttribute("max",music.duration) , 500);
 }
 
 function previousMusic(){
@@ -127,5 +126,5 @@ function hasEnded(){
 
 function thumbPosition(){
     slider.setAttribute("value", music.currentTime);
-    slider.setAttribute("max",music.duration)
+    slider.setAttribute("max",music.duration);
 }
