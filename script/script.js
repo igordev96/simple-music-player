@@ -49,10 +49,19 @@ previous.addEventListener("click", previousMusic);
 
 next.addEventListener("click", nextMusic);
 
+slider.addEventListener("mousedown", () => {
+    music.play();
+    play.setAttribute("src","./assets/pause.png");
+    img.style.animationPlayState = "running"
+    slider.addEventListener("input", (e) => {
+        music.currentTime = e.target.value});
+    });
+
+
+
 setInterval(hasEnded, 500);
 
 setInterval(thumbPosition, 100);
-
 
 
 
@@ -127,4 +136,5 @@ function hasEnded(){
 function thumbPosition(){
     slider.setAttribute("value", music.currentTime);
     slider.setAttribute("max",music.duration);
+    slider.value = slider.getAttribute("value");
 }
