@@ -69,7 +69,7 @@ function playPause(){
         play.setAttribute("src","./assets/play.png");
         img.style.animationPlayState = "paused"
     }
-    setTimeout(() => slider.setAttribute("max",music.duration) , 200);
+    setTimeout(() => slider.setAttribute("max",music.duration) , 500);
 }
 
 function previousMusic(){
