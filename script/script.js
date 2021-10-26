@@ -29,12 +29,12 @@ let previous = document.getElementsByClassName("previous")[0];
 let next = document.getElementsByClassName("next")[0];
 let title = document.getElementsByClassName("song")[0];
 let source = document.getElementsByTagName("source")[0];
+let slider = document.getElementById("musicTime");
 
 let index = 0;
 
 
 changeMusic(index);
-music.load();
 img.style.animationPlayState = "paused"
 
 
@@ -49,9 +49,9 @@ previous.addEventListener("click", previousMusic);
 
 next.addEventListener("click", nextMusic);
 
+setInterval(hasEnded, 500);
 
-
-
+setInterval(thumbPosition, 100);
 
 
 
@@ -69,6 +69,7 @@ function playPause(){
         play.setAttribute("src","./assets/play.png");
         img.style.animationPlayState = "paused"
     }
+    setTimeout(() => slider.setAttribute("max",music.duration) , 100);
 }
 
 function previousMusic(){
@@ -88,7 +89,6 @@ function previousMusic(){
         }
         resetAnimation();
         changeMusic(index);
-        music.load();
         playPause();
     }
 }
@@ -102,7 +102,6 @@ function nextMusic(){
     }
     resetAnimation();
     changeMusic(index);
-    music.load();
     playPause();
 }
 
@@ -113,7 +112,19 @@ function resetAnimation(){
 }
 
 function changeMusic(i){
+    let music = document.getElementsByTagName("audio")[0];
     title.innerHTML = playlist[i].name + "<br>" + playlist[i].artist;
     img.style.backgroundImage = playlist[i].cover;
     source.setAttribute("src",playlist[i].src);
+    music.load();
+}
+
+function hasEnded(){
+    if(music.ended){
+        nextMusic();
+    }
+}
+
+function thumbPosition(){
+    slider.setAttribute("value", music.currentTime);
 }
