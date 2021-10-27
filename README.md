@@ -12,4 +12,4 @@ Simple music player made with HTML, CSS and JavaScript with the purpose to pract
 
 #
 
-<h2><a style="text-decoration: none; color: #fff;" href="https://space-music-player.netlify.app/">Click here to test it in your browser</a></h2>
+<h2><a style="text-decoration: none; color: #fff;" href="https://space-music-player.netlify.app/" target="_blank">Click here to test it in your browser</a></h2>
